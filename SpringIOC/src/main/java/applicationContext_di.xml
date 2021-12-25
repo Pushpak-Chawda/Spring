@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	
+    <!-- Define your beans here -->
+    
+    <!-- Load Properties file from the classpath   -->
+    
+    <context:property-placeholder location="classpath:personal_details.properties"></context:property-placeholder>
+    <!-- define the dependency -->
+    <bean id="stateInvestor"
+    		class="com.pc.spring.di.StateInvestor">
+    	</bean>
+    
+    <bean id="baseBC"
+    		class="com.pc.spring.di.BaseBallCoach">
+    		
+    		<!-- <constructor-arg  ref="stateInvestor"></constructor-arg> -->
+    		<property name="investor" ref="stateInvestor"></property>
+    	</bean>
+    
+ 	<bean id="baseCC"
+ 		class="com.pc.spring.di.CricketCoach">	
+ 		
+ 	    <!-- <property name="name" value="Pushpak"></property>
+ 	    <property name="location" value="Canada"></property> -->
+ 	    
+ 	    
+ 	    <!-- Injecting value from Properties file  -->
+ 	     <property name="name" value="${person.name}"></property>
+ 	    <property name="location" value="${person.location}"></property>
+ 	</bean>
+    
+</beans>
+
+
+
+
+
