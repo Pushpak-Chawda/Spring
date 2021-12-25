@@ -15,7 +15,7 @@ public class MyApp
       ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext_di.xml");
         
         
-      Coach theBBCoach= context.getBean("baseBC", Coach.class);
+    //  Coach theBBCoach= context.getBean("baseBC", Coach.class);
       
       CricketCoach theCCCoach= context.getBean("baseCC", CricketCoach.class);
      
