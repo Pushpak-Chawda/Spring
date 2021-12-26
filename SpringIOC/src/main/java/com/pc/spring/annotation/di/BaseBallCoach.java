@@ -10,19 +10,34 @@ import org.springframework.stereotype.Component;
 @Component
 public class BaseBallCoach implements Coach {
 	
-	
+	//Option 3 Field Level
+	@Autowired
 	private FitnessService fitnessServ;
 	
 	
-	@Autowired
-	public BaseBallCoach(FitnessService theFitnessServ) {
-		fitnessServ = theFitnessServ;
-	}
+	//Option 1 Constructor Based Injection
+	
+	/*
+	 * @Autowired public BaseBallCoach(FitnessService theFitnessServ) { fitnessServ
+	 * = theFitnessServ; }
+	 */
 
+	//Option 2 Setter Based Injection
+	
 	public BaseBallCoach() {
 
 		System.out.println("I am from default constructor......");
 	}
+
+	/*
+	 * public FitnessService getFitnessServ() { return fitnessServ; }
+	 * 
+	 * 
+	 * @Autowired public void setFitnessServ(FitnessService fitnessServ) {
+	 * System.out.println("Injectiog Dependency through Setter Method...... ");
+	 * 
+	 * this.fitnessServ = fitnessServ; }
+	 */
 
 	private String name;
 

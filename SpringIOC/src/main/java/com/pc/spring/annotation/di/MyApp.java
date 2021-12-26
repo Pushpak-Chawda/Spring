@@ -9,10 +9,10 @@ public class MyApp {
 				"applicationContext_annotation.di.xml");
 
 		Coach theBBC = context.getBean("baseBallCoach", Coach.class);
+
 		
-		System.out.println("Insert here");
-	System.out.println(theBBC.dailyWorkOut());	
-	System.out.println(theBBC.getAdditionalFitness());
+		System.out.println(theBBC.dailyWorkOut());
+		System.out.println(theBBC.getAdditionalFitness());
 		context.close();
 
 	}
