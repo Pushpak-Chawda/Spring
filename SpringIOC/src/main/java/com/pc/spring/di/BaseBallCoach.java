@@ -1,5 +1,8 @@
 package com.pc.spring.di;
 
+import com.pc.spring.di.Coach;
+import com.pc.spring.di.Investor;
+
 public class BaseBallCoach implements Coach{
 
 	private Investor investor;
