@@ -1,6 +1,7 @@
 package com.pc.spring.annotation.di;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 // option 1: @Component("testBaseBallCoach")
@@ -11,6 +12,8 @@ import org.springframework.stereotype.Component;
 public class BaseBallCoach implements Coach {
 	
 	//Option 3 Field Level
+	
+	@Qualifier("cardioClass")
 	@Autowired
 	private FitnessService fitnessServ;
 	
